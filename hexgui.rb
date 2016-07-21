@@ -1,18 +1,11 @@
 class Hexgui < Formula
   desc "GUI for playing Hex over Hex Text Protocol"
   homepage "https://sourceforge.net/p/benzene/hexgui/"
-  url "http://sourceforge.net/projects/benzene/files/hexgui/hexgui-0.9.0.zip"
-  sha256 "a84e8595cf54140eea8b273832390351f7ef6dfccca38aeb2267c22d64a675d2"
+  url "https://github.com/apetresc/hexgui/archive/v0.9.1.tar.gz"
+  sha256 "7ed1af209617ad2e4877e5f46b4ba78eced14f94fa581b65ac3111abc7613c08"
 
   head do
-    url "git://git.code.sf.net/p/benzene/hexgui"
-  end
-
-  stable do
-    patch do
-      url "https://github.com/apetresc/hexgui/commit/fbddebe41a4ea806a7cec768b118f3d9fd1f4056.diff"
-      sha256 "1a0adeda87caf28baa0c91d69eefe84f0a4bf2da83d4f2f30ac354b144b094ff"
-    end
+    url "https://github.com/apetresc/hexgui.git"
   end
 
   depends_on :ant => :build
@@ -20,7 +13,8 @@ class Hexgui < Formula
 
   def install
     system "ant"
-    prefix.install ["bin", "lib"]
+    libexec.install Dir["*"]
+    (bin/"hexgui").write_env_script libexec/"bin/hexgui", Language::Java.java_home_env("1.6+")
   end
 
   test do
