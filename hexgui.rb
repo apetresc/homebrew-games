@@ -3,10 +3,7 @@ class Hexgui < Formula
   homepage "https://sourceforge.net/p/benzene/hexgui/"
   url "https://github.com/apetresc/hexgui/archive/v0.9.1.tar.gz"
   sha256 "7ed1af209617ad2e4877e5f46b4ba78eced14f94fa581b65ac3111abc7613c08"
-
-  head do
-    url "https://github.com/apetresc/hexgui.git"
-  end
+  head "https://github.com/apetresc/hexgui.git"
 
   depends_on :ant => :build
   depends_on :java
