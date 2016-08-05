@@ -6,7 +6,7 @@ class Hexgui < Formula
   head "https://github.com/apetresc/hexgui.git"
 
   depends_on :ant => :build
-  depends_on :java
+  depends_on :java => "1.6+"
 
   def install
     system "ant"
