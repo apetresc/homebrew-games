@@ -5,8 +5,8 @@ class Pachi < Formula
   sha256 "2aaf9aba098d816d20950d283c8eaed522f3fa71f68390a4c384c0c1ab03cd6f"
   head "https://github.com/pasky/pachi"
 
-  option "with-patterns", "Download pattern files for improved performance"
-  option "with-book", "Download a fuseki opening book"
+  option "without-patterns", "Don't download pattern files for improved performance"
+  option "without-book", "Don't download a fuseki opening book"
 
   resource "patterns" do
     url "http://sainet-dist.s3.amazonaws.com/pachi_patterns.zip"
