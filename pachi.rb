@@ -5,6 +5,8 @@ class Pachi < Formula
   sha256 "2aaf9aba098d816d20950d283c8eaed522f3fa71f68390a4c384c0c1ab03cd6f"
   head "https://github.com/pasky/pachi"
 
+  fails_with :clang if MacOS.version <= :mavericks
+
   option "without-patterns", "Don't download pattern files for improved performance"
   option "without-book", "Don't download a fuseki opening book"
 
