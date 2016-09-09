@@ -3,7 +3,7 @@ class Pachi < Formula
   homepage "http://pachi.or.cz/"
   url "http://repo.or.cz/w/pachi.git/snapshot/pachi-11.00-retsugen.tar.gz"
   sha256 "2aaf9aba098d816d20950d283c8eaed522f3fa71f68390a4c384c0c1ab03cd6f"
-  head "https://github.com/pasky/pachi"
+  head "https://github.com/pasky/pachi.git"
 
   fails_with :clang if MacOS.version <= :mavericks
 
